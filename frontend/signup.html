@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Image Caption Generator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-base text-light d-flex flex-column min-vh-100">
+
+    <!-- Navbar -->
+    <nav class="navbar-custom">
+        <a class="navbar-brand-custom" href="generate.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="18" fill="#1a1d2e"/><rect x="8" y="9" width="20" height="15" rx="3" fill="#252840" stroke="#4f6ef7" stroke-width="1.5"/><polygon points="8,24 14,15 19,19 24,12 28,24" fill="#3a4070"/><polygon points="19,19 24,12 28,24" fill="#4f6ef7" opacity="0.8"/><circle cx="12" cy="14" r="2" fill="#f59e0b"/></svg><span style="color:white;font-weight:700;font-size:1rem;">Mood-Based Image Caption Generator</span></a>
+        <div id="nav-auth-controls" class="d-none d-flex gap-3 align-items-center">
+            <span id="nav-user-email" class="text-muted small d-none d-sm-block"></span>
+            <a href="saved.html" class="btn-ghost text-decoration-none">Saved</a>
+            <button class="btn-ghost" id="nav-logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1 auth-bg d-flex align-items-center justify-content-center">
+        <div class="glass-card auth-card p-4">
+            <div class="text-center mb-4">
+                <h1 class="h3 fw-bold mb-1">Create Account</h1>
+                <p class="text-muted small">Join us to start generating AI captions</p>
+            </div>
+
+            <form id="auth-form">
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold text-light opacity-75">Email</label>
+                    <input type="email" id="auth-email" class="form-control" placeholder="Enter email" required
+                        autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold text-light opacity-75">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="auth-password" class="form-control with-toggle"
+                            placeholder="Enter password" required autocomplete="new-password">
+                        <button type="button" class="password-toggle" id="toggle-password">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label small fw-semibold text-light opacity-75">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="auth-password-confirm" class="form-control with-toggle"
+                            placeholder="Confirm password" required autocomplete="new-password">
+                        <button type="button" class="password-toggle" id="toggle-password-confirm">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="auth-error" class="alert alert-danger d-none small py-2"></div>
+
+                <button type="submit" id="auth-submit-btn" class="btn btn-primary w-100 py-2 fw-bold">Sign Up</button>
+            </form>
+
+            <div class="text-center mt-4">
+                <p class="small text-muted">Already have an account? <a href="index.html"
+                        class="text-primary-custom text-decoration-none fw-semibold">Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+        <div id="toast-message" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="./js/header.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+</body>
+
+</html>

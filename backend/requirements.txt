@@ -1,0 +1,16 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+firebase-admin==6.5.0
+numpy<2.0.0
+transformers==4.40.1
+torch==2.2.2
+torchvision==0.17.2
+Pillow==10.3.0
+sentencepiece==0.2.0
+sacremoses==0.1.1
+python-dotenv==1.0.1
+accelerate==0.30.0
+huggingface_hub==0.22.2
+groq
+requests
